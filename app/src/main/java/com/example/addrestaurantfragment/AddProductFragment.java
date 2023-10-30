@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import com.google.firebase.firestore.DocumentReference;
 public class AddProductFragment extends Fragment {
 
     private FirebaseServices fbs;
+
+    private RecyclerView rvProducts;
     private EditText etTittle, etDescription, etPrice;
     private Button btnAdd;
 
@@ -72,7 +75,7 @@ public class AddProductFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_restaurant, container, false);
+        return inflater.inflate(R.layout.fragment_add_product, container, false);
     }
 
     @Override
@@ -88,6 +91,7 @@ public class AddProductFragment extends Fragment {
         etTittle = getView().findViewById(R.id.etTittleAddProductFragment);
         etDescription = getView().findViewById(R.id.etDescAddProductFragment);
         etPrice = getView().findViewById(R.id.etPriceAddProductFragment);
+        rvProducts = getView().findViewById(R.id.rvProductsProFragment);
         btnAdd = getView().findViewById(R.id.btnAddAddProductFragment);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
